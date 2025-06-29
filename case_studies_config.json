@@ -1,0 +1,50 @@
+{
+  "advancedPD": {
+    "feature": "centeredTorque",
+    "file": "PD 3 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_GlobalMinMax_all_signals_2025-06-20T23-32-52.csv"
+  },
+  "cerebellarTremor": {
+    "feature": "centeredTorque",
+    "file": "PD 1 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_all_signals_2025-06-20T23-16-30 (1).csv"
+  },
+  "dystonicTremor": {
+    "feature": "centeredTorque",
+    "file": "PD 3 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_RobustIQR_all_signals_2025-06-21T00-58-37.csv"
+  },
+  "earlyPD": {
+    "feature": "centeredTorque",
+    "file": "PD 1 - 1st Attempt_G1.0_Kp1.5_Kd0.3_alpha1.0_RobustIQR_all_signals_2025-06-22T22-23-10.csv"
+  },
+  "enhancedPhysiologicalTremor": {
+    "feature": "centeredTorque",
+    "file": "N 2 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_all_signals_2025-06-20T22-36-21.csv"
+  },
+  "essentialTremor": {
+    "feature": "centeredTorque",
+    "file": "N 2 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_all_signals_2025-06-20T22-36-21.csv"
+  },
+  "hemiplegia": {
+    "feature": "centeredTorque",
+    "file": "PD 1 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_all_signals_2025-06-20T23-16-30 (1).csv"
+  },
+  "huntingtons": {
+    "feature": "centeredTorque",
+    "file": "PD 2 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_RobustIQR_all_signals_2025-06-20T23-25-45.csv"
+  },
+  "moderatePD": {
+    "feature": "centeredTorque",
+    "file": "PD 2 - 1st Attempt_G1.0_Kp1.5_Kd0.3_alpha1.0_RobustIQR_all_signals_2025-06-22T22-22-38.csv"
+  },
+  "normal": {
+    "feature": "centeredTorque",
+    "file": "N 2 - 1st Attempt_G0.5_Kp1.5_Kd0.3_alpha0.5_RobustIQR_all_signals_2025-06-22T21-56-53.csv"
+  },
+  "orthostaticTremor": {
+    "feature": "centeredTorque",
+    "file": "N 2 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_all_signals_2025-06-20T22-36-21.csv"
+  },
+  "psychogenicTremor": {
+    "feature": "centeredTorque",
+    "file": "PD 2 - 1st Attempt_G1.0_Kp1.0_Kd0.2_alpha1.0_RobustIQR_all_signals_2025-06-20T23-25-45.csv"
+  }
+}
