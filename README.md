@@ -1,6 +1,6 @@
 # TremorBot Platform
 
-A comprehensive React-based platform combining **Engineering Dashboard** and **Medical Education** components for tremor analysis, haptic feedback development, and clinical training. This platform provides tools for signal processing, hardware testing, and medical education in physical examination.
+A comprehensive React-based platform combining **Engineering Dashboard** and **Medical Education** components for signal processing, hardware testing, and medical education in physical examination.
 
 ## Platform Components
 
@@ -10,6 +10,7 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 - Haptic device integration and testing
 - Data recording and analysis tools
 - Live streaming capabilities
+- Case Studies configuration tools
 
 ### 🏥 Medical Education
 - **Neurological Conditions Overview**: Comprehensive learning resources
@@ -18,28 +19,36 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 - **Clinical Simulation**: Patient consultation practice
 - **Sensation Testing**: Haptic feedback discrimination training
 
-## Features
 
-- Real-time signal visualization
-- Interactive parameter control (α, Kp, Kd)
-- Frequency domain analysis
-- Tremor envelope visualization
-- Band-pass filtering
-- RMS envelope extraction
-- **Neurological Conditions Overview**
-- **Physical Examination Guide for Parkinson's Disease**
-- **Case Studies for Parkinson's Tremor Analysis**
-- **Haptic Feedback Sensation Testing**
-- **Clinical Simulation with Patient Scenarios**
-- **Live Monitor with Real-time Streaming**
 
 ## Prerequisites
 
 - Node.js (v14 or higher)
 - Python 3.8 or higher
 - pip (Python package manager)
+- Conda (recommended for environment management)
 
 ## Setup
+
+### Option 1: Using Conda (Recommended)
+
+1. Create a new conda environment:
+   ```bash
+   conda create -n tremor_bot python=3.8
+   conda activate tremor_bot
+   ```
+
+2. Install frontend dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Install backend dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Option 2: Using pip directly
 
 1. Install frontend dependencies:
    ```bash
@@ -65,8 +74,13 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 
 3. Open your browser and navigate to `http://localhost:3000`
 
-## Usage
+## Arduino:
+1. esp32_haptic_client - Hardware Timer (Precise Timing)
 
+
+2. esp32_haptic_control - As Fast As Possible
+
+## Overview:
 ### Engineering Dashboard
 
 1. **Signal Processing**: Use the parameter controls to adjust:
@@ -263,3 +277,4 @@ The platform includes a comprehensive Live Monitor system for real-time signal p
 - **Multiple Signal Types**: Stream centered angles, torques, envelopes, and displacement data
 - **Looping Support**: Continuous playback for extended haptic experiences
 - **Connection Management**: Automatic reconnection and status monitoring
+
