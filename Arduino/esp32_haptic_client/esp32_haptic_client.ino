@@ -6,8 +6,8 @@
 #include <ESPmDNS.h>
 
 // WiFi Configuration
-const char* ssid = "demo";
-const char* password = "yonghui83";
+const char* ssid = "";
+const char* password = "";
 const char* mDNS_HOSTNAME = "esp32";
 
 // WebSocket Configuration
