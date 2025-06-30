@@ -2,6 +2,8 @@
 
 A comprehensive React-based platform combining **Engineering Dashboard** and **Medical Education** components for signal processing, hardware testing, and medical education in physical examination.
 
+[![Watch the video](https://img.youtube.com/vi/lxJFybkl4dY/0.jpg)](https://youtu.be/lxJFybkl4dY)
+
 ## Platform Components
 
 ### 🛠️ Engineering Dashboard
