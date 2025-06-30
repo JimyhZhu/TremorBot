@@ -36,7 +36,7 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 
 1. Create a new conda environment:
    ```bash
-   conda create -n tremor_bot python=3.8
+   conda create -n tremor_bot python=3.11
    conda activate tremor_bot
    ```
 
@@ -79,12 +79,11 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 3. Open your browser and navigate to `http://localhost:3000`
 
 ## Arduino:
+Flash either 1 or 2
 1. esp32_haptic_client - Hardware Timer (Precise Timing)
-
-
 2. esp32_haptic_control - As Fast As Possible
 
-## Overview:
+## Overview of the system:
 ### Engineering Dashboard
 
 1. **Signal Processing**: Use the parameter controls to adjust:
