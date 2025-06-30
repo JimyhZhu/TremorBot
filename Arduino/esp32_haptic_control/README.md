@@ -1,16 +1,23 @@
-# ESP32 Haptic Control System
+# ESP32 Haptic Control System - Real-Time Interactive Control
 
-This ESP32 Arduino code provides a WebSocket server that can receive streaming data from the engineering platform UI and control haptic feedback based on the received signals.
+This ESP32 Arduino code provides a **WebSocket server** that receives streaming data from the engineering platform UI and controls haptic feedback with **real-time responsive timing** for interactive applications.
 
-## Features
+## Key Features
 
-- **WebSocket Server**: Runs on port 81 for real-time communication
-- **WiFi Connectivity**: Connects to your local WiFi network
-- **Haptic Control**: PWM-based haptic feedback control
-- **PID Control**: Proportional-Integral-Derivative control for smooth haptic response
-- **Real-time Data Processing**: Handles high-frequency streaming data (up to 1.2kHz)
-- **Status Indicators**: Built-in LED shows connection and streaming status
-- **Heartbeat System**: Maintains connection with periodic heartbeats
+- **⚡ Real-Time Responsive**: Processes data "as fast as possible" for immediate feedback
+- **📡 WebSocket Server**: Runs on port 81 for real-time communication with UI
+- **🔗 WiFi Connectivity**: Connects to your local WiFi network
+- **🎛️ Interactive Control**: Immediate response to user actions and parameter changes
+- **📊 Status Monitoring**: Built-in LED shows connection and streaming status
+- **💓 Heartbeat System**: Maintains connection with periodic heartbeats
+
+## Timing Approach: **As Fast As Possible**
+
+Unlike the client version that uses precise hardware timers, this control system:
+- **Processes data immediately** when available in the buffer
+- **Variable timing intervals** based on system load and data arrival
+- **Real-time responsive** - prioritizes speed over precision
+- **Interactive feedback** - perfect for user control applications
 
 ## Hardware Requirements
 
@@ -20,7 +27,8 @@ This ESP32 Arduino code provides a WebSocket server that can receive streaming d
 
 ## Pin Configuration
 
-- **GPIO 25**: Haptic actuator PWM output
+- **GPIO 25**: Haptic actuator DAC output
+- **GPIO 18**: Motor ON/OFF control
 - **GPIO 2**: Built-in LED (status indicator)
 
 ## Setup Instructions
@@ -48,7 +56,7 @@ const char* password = "YourWiFiPassword";  // Change to your WiFi password
 
 ### 4. Connect Haptic Actuator
 
-Connect your haptic actuator to GPIO 25 and ground. The system uses PWM at 20kHz for smooth haptic control.
+Connect your haptic actuator to GPIO 25 and ground. The system uses DAC output for smooth haptic control.
 
 ## Communication Protocol
 
@@ -66,6 +74,14 @@ Connect your haptic actuator to GPIO 25 and ground. The system uses PWM at 20kHz
 ```json
 {
   "command": "stopStreaming"
+}
+```
+
+**Manual Control:**
+```json
+{
+  "command": "manualControl",
+  "value": 128
 }
 ```
 
@@ -104,20 +120,35 @@ Connect your haptic actuator to GPIO 25 and ground. The system uses PWM at 20kHz
 
 ## Haptic Control
 
-The system uses PID control to convert the received normalized values (0-255) into haptic feedback intensity:
+The system processes haptic data with **real-time responsive timing**:
 
-- **PWM Frequency**: 20kHz
-- **Resolution**: 8-bit (0-255 levels)
-- **PID Parameters**: 
-  - Kp = 1.0 (Proportional)
-  - Ki = 0.1 (Integral)
-  - Kd = 0.05 (Derivative)
+- **DAC Output**: 8-bit resolution (0-255 levels)
+- **Immediate Processing**: Data processed as soon as it arrives
+- **Variable Timing**: Intervals depend on system load and data rate
+- **Interactive Response**: Perfect for user-controlled applications
 
 ## Status LED Indicators
 
 - **Off**: Not connected to UI
 - **Slow Blink (500ms)**: Connected but not streaming
 - **Fast Blink (100ms)**: Connected and streaming data
+
+## Performance & Timing
+
+- **⚡ Real-Time Response**: Immediate processing of incoming data
+- **📊 Variable Timing**: Intervals adapt to system load and data arrival
+- **🎯 Interactive Feedback**: Perfect for user control applications
+- **📈 Buffer Size**: 200 data points for smooth operation
+- **🔗 WebSocket Latency**: <10ms for responsive control
+
+## Use Cases
+
+**Perfect for:**
+- **Interactive applications** requiring immediate response
+- **User-controlled haptic feedback** where speed matters more than precision
+- **Real-time parameter adjustment** during experiments
+- **Live demonstrations** and interactive sessions
+- **Educational applications** where responsiveness enhances learning
 
 ## Troubleshooting
 
@@ -134,15 +165,8 @@ The system uses PID control to convert the received normalized values (0-255) in
 
 ### Haptic Issues
 1. Verify haptic actuator connection to GPIO 25
-2. Check PWM frequency and resolution settings
-3. Monitor PID control values in Serial Monitor
-
-## Performance
-
-- **Maximum Sampling Rate**: 1.2kHz
-- **WebSocket Latency**: <10ms
-- **PWM Frequency**: 20kHz
-- **Buffer Size**: 100 data points
+2. Check DAC output values in Serial Monitor
+3. Monitor buffer status and processing rates
 
 ## Customization
 
@@ -151,17 +175,14 @@ The system uses PID control to convert the received normalized values (0-255) in
 const int HAPTIC_PIN = 25;  // Change to desired GPIO pin
 ```
 
-### Adjust PID Parameters
+### Adjust Buffer Size
 ```cpp
-float Kp = 1.0;  // Proportional gain
-float Ki = 0.1;  // Integral gain
-float Kd = 0.05; // Derivative gain
+const int BUFFER_SIZE = 200;  // Increase for smoother operation
 ```
 
-### Modify PWM Settings
+### Modify Processing Speed
 ```cpp
-const int PWM_FREQ = 20000;      // PWM frequency in Hz
-const int PWM_RESOLUTION = 8;    // PWM resolution (8-bit = 0-255)
+const int maxPointsPerIteration = 10;  // Process more points per loop
 ```
 
 ## Integration with Engineering Platform
@@ -169,8 +190,9 @@ const int PWM_RESOLUTION = 8;    // PWM resolution (8-bit = 0-255)
 This ESP32 code is designed to work seamlessly with the engineering platform UI:
 
 1. **WebSocket Connection**: Automatically connects when UI starts
-2. **Real-time Streaming**: Receives normalized signal data at full sampling rate
-3. **Haptic Feedback**: Converts signal values to haptic intensity
+2. **Real-Time Streaming**: Receives normalized signal data with immediate processing
+3. **Interactive Feedback**: Converts signal values to haptic intensity in real-time
 4. **Status Monitoring**: Provides connection and streaming status to UI
 
-The ESP32 will automatically receive the selected signal data and apply haptic feedback based on the normalized values (0-255 range). 
+
+The ESP32 will automatically receive the selected signal data and apply haptic feedback with **immediate, responsive timing** perfect for interactive applications. 
