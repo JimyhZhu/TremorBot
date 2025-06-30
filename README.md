@@ -1,6 +1,22 @@
-# Engineering Platform
+# TremorBot Platform
 
-A React-based engineering interface for signal design, waveform visualization, and hardware testing. This platform provides tools for inspecting raw sensor recordings, applying signal processing techniques, and visualizing hybrid signal components.
+A comprehensive React-based platform combining **Engineering Dashboard** and **Medical Education** components for tremor analysis, haptic feedback development, and clinical training. This platform provides tools for signal processing, hardware testing, and medical education in physical examination.
+
+## Platform Components
+
+### 🛠️ Engineering Dashboard
+- Real-time signal visualization and processing
+- Interactive parameter control for tremor simulation
+- Haptic device integration and testing
+- Data recording and analysis tools
+- Live streaming capabilities
+
+### 🏥 Medical Education
+- **Neurological Conditions Overview**: Comprehensive learning resources
+- **Physical Examination Guide**: Clinical assessment training
+- **Case Studies**: Interactive tremor pattern analysis
+- **Clinical Simulation**: Patient consultation practice
+- **Sensation Testing**: Haptic feedback discrimination training
 
 ## Features
 
@@ -14,6 +30,8 @@ A React-based engineering interface for signal design, waveform visualization, a
 - **Physical Examination Guide for Parkinson's Disease**
 - **Case Studies for Parkinson's Tremor Analysis**
 - **Haptic Feedback Sensation Testing**
+- **Clinical Simulation with Patient Scenarios**
+- **Live Monitor with Real-time Streaming**
 
 ## Prerequisites
 
@@ -23,17 +41,12 @@ A React-based engineering interface for signal design, waveform visualization, a
 
 ## Setup
 
-1. Clone the repository and navigate to the project directory:
-   ```bash
-   cd engineering_platform
-   ```
-
-2. Install frontend dependencies:
+1. Install frontend dependencies:
    ```bash
    npm install
    ```
 
-3. Install backend dependencies:
+2. Install backend dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -54,12 +67,14 @@ A React-based engineering interface for signal design, waveform visualization, a
 
 ## Usage
 
-1. Use the parameter controls to adjust:
+### Engineering Dashboard
+
+1. **Signal Processing**: Use the parameter controls to adjust:
    - α (Tremor Gain) - Controls tremor intensity in hybrid replay (0 ≤ α ≲ 1.5)
    - G (Global Gain) - Overall system gain
    - Kp, Kd - Not used in direct torque output mode
 
-2. The main visualization will update in real-time to show:
+2. **Real-time Visualization**: The main visualization updates in real-time to show:
    - Raw angle
    - Base angle (low-frequency carrier)
    - Tremor component
@@ -67,9 +82,17 @@ A React-based engineering interface for signal design, waveform visualization, a
    - Hybrid replay trajectory: θ_play = θ_base + α × A × T_raw
    - Direct torque output: τ = G × (θ_base + α × A × T_raw)
 
-3. Additional plots show:
-   - Frequency domain characteristics
-   - Tremor envelope analysis
+3. **Live Monitor**: Access real-time streaming, haptic device control, and data recording
+
+4. **Additional Analysis**: Frequency domain characteristics and tremor envelope analysis
+
+### Medical Education
+
+1. **Neurological Conditions**: Study comprehensive overviews of movement disorders
+2. **Physical Examination**: Learn clinical assessment techniques for Parkinson's disease
+3. **Case Studies**: Practice identifying different tremor patterns through haptic feedback
+4. **Clinical Simulation**: Engage in realistic patient consultations with history-taking and diagnosis
+5. **Sensation Testing**: Develop haptic discrimination skills through blind testing
 
 ## Neurological Conditions
 
@@ -187,18 +210,17 @@ A comprehensive clinical skills assessment that simulates real patient consultat
 4. **Educational Feedback**: Detailed explanations of correct diagnoses and clinical reasoning
 
 **Features**:
-- **Focused Patient Scenarios**: Six carefully selected patient cases covering key movement disorders:
+- **Focused Patient Scenarios**: Four carefully selected patient cases covering key movement disorders:
   - Physiological Tremor (Normal Control)
   - Early-Stage Parkinson's Disease
   - Moderate Parkinson's Disease
   - Advanced Parkinson's Disease
-  - Hemiplegia (Post-Stroke)
-  - Huntington's Disease
 - **Interactive History Taking**: Suggested questions and custom question capability
 - **Clinical Reasoning**: Students must explain their diagnostic thinking
 - **Comprehensive Feedback**: Detailed clinical explanations for each case
 - **Progressive Learning**: Step-by-step clinical workflow simulation
 - **Realistic Patient Profiles**: Diverse demographics, occupations, and clinical presentations
+- **Haptic Integration**: Direct haptic feedback experience for each case using configured data files
 
 This feature helps students develop comprehensive clinical skills including history-taking, physical examination interpretation, and diagnostic reasoning for the most clinically relevant movement disorders.
 
@@ -247,4 +269,33 @@ The platform uses the following signal processing techniques:
 - `/api/frequency-domain` (GET): Get frequency domain analysis
 - `/api/envelope-data` (GET): Get tremor and envelope data
 - `/api/case-studies-config` (GET/POST): Manage case studies configuration
-- `/api/file-data` (GET): Load processed data files for case studies 
+- `/api/file-data` (GET): Load processed data files for case studies
+- `/api/start-live-stream` (POST): Start real-time signal streaming
+- `/api/stop-live-stream` (POST): Stop real-time signal streaming
+- `/api/live-data` (GET): Server-sent events for live data streaming
+- `/api/list-processed-files` (GET): List available processed data files
+- `/api/save-recorded-data` (POST): Save recorded data with metadata
+
+## Live Monitor
+
+The platform includes a comprehensive Live Monitor system for real-time signal processing and haptic feedback:
+
+### Key Features
+- **Real-time Signal Streaming**: Live visualization of processed signals with configurable sampling rates
+- **Haptic Device Integration**: Direct WebSocket communication with ESP32 haptic devices
+- **Case Studies Configuration**: Dynamic configuration of case study files and features for haptic playback
+- **Data Recording**: Capture and save processed data with parameter metadata
+- **Normalized Visualization**: Global statistics-based normalization for consistent signal display
+- **Manual Control**: Direct haptic device control for testing and calibration
+
+### Case Studies Configuration
+- **Dynamic File Management**: Configure which data files are used for each case study
+- **Feature Selection**: Choose which signal features (centeredTorque, centeredAngle, etc.) to stream
+- **Real-time Updates**: Changes immediately affect all case studies, sensation tests, and clinical simulations
+- **Global Statistics**: Automatic normalization using global min/max or robust IQR statistics
+
+### Streaming Capabilities
+- **High-Speed Streaming**: Support for 1000Hz+ sampling rates with efficient batching
+- **Multiple Signal Types**: Stream centered angles, torques, envelopes, and displacement data
+- **Looping Support**: Continuous playback for extended haptic experiences
+- **Connection Management**: Automatic reconnection and status monitoring
