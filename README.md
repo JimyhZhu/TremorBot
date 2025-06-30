@@ -41,6 +41,7 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 2. Install frontend dependencies:
    ```bash
    npm install
+   npm start
    ```
 
 3. Install backend dependencies:
@@ -53,6 +54,7 @@ A comprehensive React-based platform combining **Engineering Dashboard** and **M
 1. Install frontend dependencies:
    ```bash
    npm install
+   npm start
    ```
 
 2. Install backend dependencies:
