@@ -6,11 +6,10 @@
 #include <ESPmDNS.h>  // Add mDNS support
 
 // WiFi Configuration
-// const char* ssid = "4E0C Hyperoptic Fibre Broadband";
-// const char* password = "DpR9STttYUaX";
 
-const char* ssid = "demo";
-const char* password = "yonghui83";
+
+const char* ssid = "";
+const char* password = "";
 // mDNS Configuration
 const char* mDNS_HOSTNAME = "esp32";  // This will make it available as esp32.local
 
