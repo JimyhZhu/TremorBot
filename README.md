@@ -101,33 +101,14 @@ The platform includes a comprehensive overview of key neurological conditions th
 ### Three Major Conditions Covered
 
 1. **Parkinson's Disease**
-   - Progressive neurodegenerative disorder
-   - Loss of dopaminergic neurons in substantia nigra
-   - Cardinal signs: bradykinesia, rigidity, tremor, postural instability
-   - Epidemiology: 1-2% of population over 60 years
-   - Treatment: Levodopa/carbidopa, dopamine agonists, deep brain stimulation
+
 
 2. **Hemiplegia**
-   - Unilateral paralysis typically caused by stroke
-   - Damage to motor cortex or corticospinal tract
-   - Clinical features: spasticity, hyperreflexia, Babinski sign
-   - Associated symptoms: aphasia, neglect syndrome, visual field defects
-   - Treatment: Rehabilitation, spasticity management, assistive devices
+
 
 3. **Huntington's Disease**
-   - Autosomal dominant inherited disorder
-   - CAG trinucleotide repeat expansion in HTT gene
-   - Motor: chorea, dystonia, bradykinesia
-   - Cognitive: executive dysfunction, memory impairment
-   - Psychiatric: depression, irritability, psychosis
-   - Treatment: Symptomatic only (tetrabenazine, antipsychotics)
 
-### Educational Features
-- **Comprehensive Condition Profiles**: Detailed information on epidemiology, pathophysiology, clinical features, diagnosis, and treatment
-- **Interactive Comparison Table**: Side-by-side comparison of key features across conditions
-- **Clinical Pearls**: Essential diagnostic and management insights
-- **Structured Learning**: Organized accordion interface for easy navigation
-- **Evidence-Based Content**: Current clinical guidelines and research findings
+
 
 This section provides foundational knowledge essential for understanding movement disorders and their clinical presentations.
 
@@ -138,28 +119,16 @@ The platform includes a comprehensive guide to the physical examination of Parki
 ### Four Cardinal Signs
 
 1. **Bradykinesia (Required for Diagnosis)**
-   - Slowness of movement and reduced amplitude
-   - Clinical features: hypokinesia, micrographia, reduced arm swing
-   - Examination techniques: finger tapping, hand opening/closing, foot tapping
-   - Most disabling feature affecting activities of daily living
+
 
 2. **Rigidity**
-   - Increased muscle tone affecting both agonist and antagonist muscles
-   - Clinical features: cogwheel rigidity, lead pipe rigidity, asymmetric onset
-   - Examination techniques: passive joint movement, contralateral activation
-   - Contributes to characteristic stooped posture
+
 
 3. **Tremor**
-   - Typically rest tremor (4-6 Hz) with pill-rolling movement
-   - Clinical features: asymmetric onset, suppressed by voluntary movement
-   - Examination techniques: observation at rest, mental distraction, postural testing
-   - Most recognizable but not required for diagnosis
+
 
 4. **Postural Instability & Gait Disturbance**
-   - Balance and walking problems appearing later in disease course
-   - Clinical features: shuffling gait, festination, freezing, retropulsion
-   - Examination techniques: pull test, tandem walking, turning assessment
-   - Major cause of falls and disability
+
 
 5. **Four Joint Motion Assessment (WFE, WAA, EFE, EPS)**
    - Standardized quantitative assessment of specific joint movements
@@ -169,12 +138,7 @@ The platform includes a comprehensive guide to the physical examination of Parki
    - **EPS**: Elbow Pronation-Supination - forearm rotation (palm up/down)
    - Used to quantify bradykinesia and rigidity for disease progression tracking
 
-### Educational Features
-- **Interactive Accordion Interface**: Expandable sections for each cardinal sign
-- **Clinical Context**: Detailed explanations of examination techniques
-- **Key Points Summary**: Essential diagnostic criteria and clinical pearls
-- **Severity Indicators**: Clear marking of required vs. supportive features
-- **Practical Guidance**: Step-by-step examination instructions
+
 
 This section provides medical students with the foundational knowledge needed to perform accurate physical examinations for Parkinson's disease diagnosis.
 
